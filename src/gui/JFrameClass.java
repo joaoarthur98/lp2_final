@@ -36,7 +36,6 @@ public class JFrameClass extends JFrame implements CaretListener {
 	private JMenuItem abrir = new JMenuItem("Abrir");
 	private JMenuItem salvar = new JMenuItem("Salvar");
 	private JMenuItem salvarComo = new JMenuItem("Salvar como");
-	private JMenu mnNewMenu = new JMenu("Editar");
 	private JTextArea textAreaGlobal = new JTextArea();
 	private JFileChooser fileChooser = new JFileChooser();
 	private final JLabel caminhoArquivo = new JLabel("");
@@ -106,8 +105,6 @@ public class JFrameClass extends JFrame implements CaretListener {
 		menuArquivo.add(abrir);
 		menuArquivo.add(salvar);
 		menuArquivo.add(salvarComo);
-
-		menuBar.add(mnNewMenu);
 	}
 
 	public void browseFiles(ActionEvent e) throws IOException {
