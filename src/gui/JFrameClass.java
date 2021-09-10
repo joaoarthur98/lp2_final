@@ -13,7 +13,10 @@ import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import javax.swing.event.CaretEvent;
+import javax.swing.event.CaretListener;
 import javax.swing.filechooser.FileNameExtensionFilter;
+import javax.swing.text.BadLocationException;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JMenuBar;
@@ -23,7 +26,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JLabel;
 
-public class JFrameClass extends JFrame {
+public class JFrameClass extends JFrame implements CaretListener{
 
 	private static final long serialVersionUID = 1L;
 	
@@ -99,6 +102,28 @@ public class JFrameClass extends JFrame {
 		contentPane.add(scrollPane, BorderLayout.CENTER);
 		
 		scrollPane.setViewportView(textArea);
+		
+		
+		contentPane.add(caminhoArquivo, BorderLayout.SOUTH);
+		
+		textArea.addCaretListener(new CaretListener() {
+			@Override
+			public void caretUpdate(CaretEvent e) {
+				int lineNum = 1;
+				
+				try {
+					int pos = textArea.getCaretPosition();
+					lineNum = textArea.getLineOfOffset(pos);
+					
+					lineNum += 1;
+				} catch (Exception e1) {
+					e1.printStackTrace();
+				}
+				
+				updateStatus(lineNum);
+			}
+		});
+		
 	}
 	
 	public void browseFiles(ActionEvent e) throws IOException {
@@ -107,8 +132,8 @@ public class JFrameClass extends JFrame {
 		
 		fileChooser.showOpenDialog(this);
 		fileChooser.setVisible(true);
-		contentPane.add(caminhoArquivo, BorderLayout.SOUTH);
-		caminhoArquivo.setText(fileChooser.getSelectedFile().getAbsolutePath());
+		
+		caminhoArquivo.setText("Caminho: " + fileChooser.getSelectedFile().getAbsolutePath());
 		leitor(fileChooser.getSelectedFile());
 	}
 	
@@ -135,6 +160,8 @@ public class JFrameClass extends JFrame {
 				fileWriter.write(textArea.getText());
 				fileWriter.close();
 			}
+			
+			caminhoArquivo.setText("Caminho: " + fileChooser.getSelectedFile().getAbsolutePath());
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -147,6 +174,17 @@ public class JFrameClass extends JFrame {
 			File file = fileChooser.getSelectedFile();
 			escrever(file);
 		}
+	}
+
+	private void updateStatus(int linenumber) {
+		if (fileChooser.getSelectedFile() == null)
+			caminhoArquivo.setText("Line: " + linenumber);
+		else
+			caminhoArquivo.setText("Caminho: " + fileChooser.getSelectedFile().getAbsolutePath() + "\t Line: " + linenumber);
+    }
+
+	@Override
+	public void caretUpdate(CaretEvent e) {
 	}
 
 }
