@@ -1,15 +1,15 @@
-# Linguagem de Programação 2 - Projeto Final
-Projeto Final da Disciplina de Linguagem de ProgramaÃ§Ã£o 2 do Curso de Tecnologia da InformaÃ§Ã£o
+# Linguagem de ProgramaÃ§Ã£o 2 - Projeto Final
+Projeto Final da Disciplina de Linguagem de ProgramaÃ§Ã£o 2 do Curso de Tecnologia da InformaÃƒÂ§ÃƒÂ£o
 
 
 ### Funcionalidades atendidas: 
 
 + Leitura e escrita de arquivos de texto
-+ Presença de menu com ações de "Novo", "Abrir", "Salvar" e "Salvar como"
-+ Redimensionamento da área de exibição
-+ Utilização da estratégia de abas permitindo a manipulação de vários arquivos
++ PresenÃ§a de menu com aÃ§Ãµes de "Novo", "Abrir", "Salvar" e "Salvar como"
++ Redimensionamento da Ã¡rea de exibiÃ§Ã£o
++ UtilizaÃ§Ã£o da estratÃ©gia de abas permitindo a manipulaÃ§Ã£o de vÃ¡rios arquivos
 
-### Funcionalidades não atendidas:
-+ Presença de botão "Fechar"
-+ Presença de barra lateral com estrutura de diretórios
-+ Presença de botãso de ação selecionando o diretório que a barra lateral deve ser exibida
+### Funcionalidades nÃ£o atendidas:
++ PresenÃ§a de botÃ£o "Fechar"
++ PresenÃ§a de barra lateral com estrutura de diretÃ³rios
++ PresenÃ§a de botÃ£so de aÃ§Ã£o selecionando o diretÃ³rio que a barra lateral deve ser exibida
