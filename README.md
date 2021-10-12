@@ -1,4 +1,4 @@
-# Linguagem de Programação 2 - Projeto Final
+# Linguagem de Programação 2 - Projeto Final da Disciplina 
 Projeto Final da Disciplina de Linguagem de Programação 2 do Curso de Tecnologia da InformaÃ§Ã£o
 
 
