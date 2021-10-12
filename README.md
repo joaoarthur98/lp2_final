@@ -4,6 +4,7 @@ Projeto Final da Disciplina de Linguagem de Programação 2 do Curso de Tecnolog
 
 ### Funcionalidades atendidas: 
 
+
 + Leitura e escrita de arquivos de texto
 + Presença de menu com ações de "Novo", "Abrir", "Salvar" e "Salvar como"
 + Redimensionamento da área de exibição
